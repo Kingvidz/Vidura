@@ -1,0 +1,56 @@
+:root[data-theme="light"] {
+    --bg: #f8fafc;
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #6366f1;
+    --border: #e2e8f0;
+    --nav-hover: #f1f5f9;
+}
+
+:root[data-theme="dark"] {
+    --bg: #0f172a;
+    --sidebar-bg: #1e293b;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #818cf8;
+    --border: #334155;
+    --nav-hover: #334155;
+}
+
+* { box-sizing: border-box; margin: 0; transition: background 0.3s, color 0.3s; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+
+/* Sidebar */
+.sidebar { width: 280px; background: var(--sidebar-bg); border-right: 1px solid var(--border); padding: 2rem; display: flex; flex-direction: column; }
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--accent); }
+
+.nav-links { list-style: none; flex-grow: 1; }
+.nav-item { padding: 0.8rem 1rem; margin-bottom: 0.5rem; border-radius: 12px; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; gap: 12px; font-weight: 500; }
+.nav-item:hover { background: var(--nav-hover); color: var(--text-main); }
+.nav-item.active { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+
+/* Main Content */
+.content { flex: 1; padding: 3rem; overflow-y: auto; }
+.card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
+
+/* Stats Grid */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.stat-card h3 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent); }
+
+/* Buttons & Inputs */
+.primary-btn { background: var(--accent); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 600; cursor: pointer; transition: transform 0.2s; }
+.primary-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+input, select { background: var(--bg); border: 1px solid var(--border); color: var(--text-main); padding: 0.8rem; border-radius: 10px; width: 100%; margin-top: 0.5rem; }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Toast */
+.toast { position: fixed; bottom: 30px; right: 30px; background: #10b981; color: white; padding: 1rem 2rem; border-radius: 50px; display: none; font-weight: 600; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }

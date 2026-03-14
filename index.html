@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReputationPro | AI Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Rep<span>Pro</span></div>
+            <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()">🌓</button>
+        </div>
+        
+        <ul class="nav-links">
+            <li onclick="showPage('dashboard')" class="nav-item active" id="nav-dashboard">
+                <span class="icon">📊</span> Dashboard
+            </li>
+            <li onclick="showPage('reviews')" class="nav-item" id="nav-reviews">
+                <span class="icon">💬</span> Reviews
+            </li>
+            <li onclick="showPage('templates')" class="nav-item" id="nav-templates">
+                <span class="icon">🤖</span> AI Templates
+            </li>
+            <li onclick="showPage('settings')" class="nav-item" id="nav-settings">
+                <span class="icon">⚙️</span> Settings
+            </li>
+        </ul>
+
+        <div class="user-profile">
+            <div class="avatar"></div>
+            <div class="user-info">
+                <p id="display-biz-name">Loading...</p>
+                <span>Enterprise Tier</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div id="page-content" class="fade-in"></div>
+    </main>
+
+    <div id="toast" class="toast">Changes Syncing...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
